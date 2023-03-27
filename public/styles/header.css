@@ -1,0 +1,11 @@
+header {
+  display: flex;
+  background-color: #cc8800;
+  background-image: url("https://www.transparenttextures.com/patterns/cross-scratches.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 120vh;
+  width: 100%;
+}

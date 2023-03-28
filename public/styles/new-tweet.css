@@ -1,25 +1,48 @@
-
-
-form {
+.new-tweet {
   display: flex;
   flex-direction: column;
-  margin-left: 15%;
 }
 
-form>div {
+.compose-tweet {
+  margin-left: 20px;
+}
+
+
+.tweet-form {
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.tweet-button-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+}
+
+.left-side {
+  margin-top: 5px;
+}
+
+.right-side {
+  margin-top: 5px;
 }
 
 textarea {
   border-bottom: 5px solid #000;
 }
 
-button {
+/* button {
   margin-top: 15px;
 }
 
 output.counter {
   padding-top: 10px;
+} */
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  padding: 0 1rem;
+  font-size: 1.8rem;
 }

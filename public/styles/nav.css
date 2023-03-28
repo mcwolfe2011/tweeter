@@ -1,7 +1,8 @@
-nav {
+.main-nav {
   position: fixed;
+  top: 0;
   display: flex;
-  height: 120px;
+  height: 20vh;
   width: 100vw;
   justify-content: center;
   align-items: center;

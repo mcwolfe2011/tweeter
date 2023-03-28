@@ -22,51 +22,53 @@
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
+    <!-- External JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <!-- App JS -->
+    <script type="text/javascript" src="/scripts/client.js"></script> 
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
-    <div class="wrapper">
-    <header class="wrapper-child main-header top">
-      <nav class="main-nav">
-        <div class="nav nav-a"><span>Tweeter</span></div>
-          <div class="nav nav-b">
-            <div class="nav-right">
-              <p class="col-right col-top" id="write-new-tweet"><span class="write">Write</span> a new tweet</p>
-              <p class="col-right col-bottom"><a href="#"><i class="fa-solid fa-angles-down"></i></a></p>
+      <div class="wrapper">
+      <header class="wrapper-child main-header top">
+        <nav class="main-nav">
+          <div class="nav nav-a"><span>Tweeter</span></div>
+            <div class="nav nav-b">
+              <div class="nav-right">
+                <p class="col-right col-top" id="write-new-tweet"><span class="write">Write</span> a new tweet</p>
+                <p class="col-right col-bottom"><a href="#"><i class="fa-solid fa-angles-down"></i></a></p>
+              </div>
             </div>
+        </nav>
+        <section class="profile">
+          <div>
+            <img src="/images/profile-hex.png"> 
           </div>
-      </nav>
-      <section class="profile">
-        <div>
-          <img src="/images/profile-hex.png"> 
-        </div>
-        <div>
-          <h2 class="user-name">Miki Mi</h2>
-        </div>
-      </section>
-    </header> 
-    <!-- Page-specific (main) content here -->
-    <main class="wrapper-child">
-      <section class="new-tweet">
-        <h2 class="compose-tweet">Compose Tweet</h2>
-        <form class="tweet-form" method="POST" action="/tweets">
-          <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
-          <div class="tweet-button-container">
-            <button class="left-side" type="submit">Tweet</button>
-            <output class="right-side" name="counter" class="counter" for="tweet-text">140</output>
+          <div>
+            <h2 class="user-name">Miki Mi</h2>
           </div>
-        </form>
+        </section>
+      </header> 
+      <!-- Page-specific (main) content here -->
+      <main class="wrapper-child">
+        <section class="new-tweet">
+          <h2 class="compose-tweet">Compose Tweet</h2>
+          <form class="tweet-form" method="POST" action="/tweets">
+            <label for="tweet-text">What are you humming about?</label>
+            <textarea name="text" id="tweet-text"></textarea>
+            <div class="tweet-button-container">
+              <button class="left-side" type="submit">Tweet</button>
+              <output id="charCount" class="right-side counter" name="counter"  for="tweet-text">140</output>
+            </div>
+          </form>
 
-      </section>
-    </main>
-  </div><!--  Wrapper Div  -->
-   
-  
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script>  
+        </section>
+      </main>
+    </div><!--  Wrapper Div  --> 
   </body>
 </html>

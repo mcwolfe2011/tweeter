@@ -1,0 +1,25 @@
+
+
+form {
+  display: flex;
+  flex-direction: column;
+  margin-left: 15%;
+}
+
+form>div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+textarea {
+  border-bottom: 5px solid #000;
+}
+
+button {
+  margin-top: 15px;
+}
+
+output.counter {
+  padding-top: 10px;
+}

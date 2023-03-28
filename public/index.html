@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
     <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
   </head>
 
   <body>
@@ -45,12 +46,17 @@
     </header>
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>Cupcake ipsum dolor sit amet macaroon apple pie.</h1>
-      <p>
-        Soufflé shortbread tiramisu lemon drops gingerbread cookie candy canes marshmallow jelly-o. Bear claw caramels dragée soufflé jujubes bear claw toffee marzipan cotton candy. Oat cake chocolate sugar plum topping powder.
-Danish pastry chocolate cake lemon drops chocolate cheesecake bear claw. Chocolate bar cotton candy bonbon cake shortbread. Sweet roll jelly beans dragée shortbread gummi bears toffee sweet tootsie roll cookie.
-      </p>
-      <h2>Sugar plum cheesecake donut lollipop</h2>
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form method="POST" action="/tweets">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div>
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      </section>
     </main>
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

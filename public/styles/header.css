@@ -8,8 +8,9 @@
 }
 
 .profile {
-  padding-top: 20%;
+  padding-top: 40%;
   padding-bottom: 5%;
+  position: relative;
 }
 
 .user-name {

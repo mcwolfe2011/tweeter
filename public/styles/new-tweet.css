@@ -14,6 +14,7 @@
   padding: 0 20px;
 }
 
+/* counter */
 .red {
   color: red;
 }
@@ -32,21 +33,87 @@
 }
 
 textarea {
-  border-bottom: 5px solid #000;
+  border-bottom: 5px solid #868282;
 }
 
-/* button {
-  margin-top: 15px;
+/* Article - tweet container */
+article.container {
+  border: 3px solid #000;
+  display: flex;
+  flex-direction: column;
+  margin: 5rem 15px;
 }
 
-output.counter {
-  padding-top: 10px;
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 25px;
+}
+
+.muted {
+  color: #999;
+  font-size: 1.5rem;
+  opacity: 0.5;
+}
+
+.tweet-header img {
+  width: 100px;
+}
+
+.tweet-p {
+  padding-left: 25px;
+}
+
+hr.one {
+  height: 2px;
+  width: 98%;
+  background: #000;
+  border-bottom: 1px solid #000;
+  border: 0;
+}
+
+footer.icons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.icons p {
+  padding-left: 15px;
+}
+
+footer.icon {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+/* article.tweet {
+  padding: 2rem;
+  border: 0.2rem solid rgba(199, 219, 235, 1);
+  border-radius: 1.5rem;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  background-color: rgba(199, 219, 235, 0.5);
+  transition: 0.3s linear;
+  text-align: center;
 } */
 
-footer {
+/* article.tweet:hover {
+  box-shadow: 0.5rem 0.5rem 1rem rgb(142, 135, 146);
+}
+
+article.tweet header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+} */
+
+
+/* footer {
   display: flex;
   justify-content: space-between;
   margin-top: 2rem;
   padding: 0 1rem;
   font-size: 1.8rem;
-}
+} */

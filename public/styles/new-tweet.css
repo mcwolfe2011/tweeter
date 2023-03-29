@@ -86,10 +86,6 @@ article.container:hover {
   opacity: 0.5;
 }
 
-.tweet-header img {
-  width: 60px;
-}
-
 .tweet-p {
   color: #282626;
   font-weight: bold;

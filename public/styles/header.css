@@ -1,8 +1,9 @@
 .main-header {
   display: flex;
   justify-content: center;
-  background-color: #cc8800;
-  background-image: url("https://www.transparenttextures.com/patterns/cross-scratches.png");
+  background-color: #9fa4e0;
+  background-image: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
 }
 

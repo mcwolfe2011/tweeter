@@ -7,6 +7,10 @@
   margin-left: 20px;
 }
 
+.tweet-question {
+  font-weight: 900;
+  padding-bottom: 0.75rem;
+}
 
 .tweet-form {
   display: flex;
@@ -24,12 +28,26 @@
   justify-content: space-between;
 }
 
-.left-side {
+button {
   margin-top: 5px;
+  font-family: 'Bungee', cursive;
+  color: #fff;
+  background-color: #4056a1;
+  border: none;
+  padding: 0.2rem 0.5rem;
+  cursor: pointer;
 }
+
+button:hover {
+  background-color: rgba(11, 151, 238, 0.916);
+  border-radius: 3px;
+}
+
 
 .right-side {
   margin-top: 5px;
+  font-family: 'Bungee', cursive;
+  color: #151414;
 }
 
 textarea {
@@ -42,12 +60,24 @@ article.container {
   display: flex;
   flex-direction: column;
   margin: 5rem 15px;
+  padding: 2rem;
+  margin-bottom: 30px;
+  margin-left: 15px;
+  margin-right: 15px;
+  transition: 0.3s linear;
+  text-align: center;
 }
+
+article.container:hover {
+  box-shadow: 0.5rem 0.5rem 1rem rgb(142, 135, 146);
+}
+
+
 
 .tweet-header {
   display: flex;
   justify-content: space-between;
-  padding: 0 25px;
+  padding: 10px 25px;
 }
 
 .muted {
@@ -57,11 +87,13 @@ article.container {
 }
 
 .tweet-header img {
-  width: 100px;
+  width: 60px;
 }
 
 .tweet-p {
-  padding-left: 25px;
+  color: #282626;
+  font-weight: bold;
+  padding: 0 15px;
 }
 
 hr.one {
@@ -73,8 +105,10 @@ hr.one {
 }
 
 footer.icons {
+  height: 3.5rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
+  padding: 0 15px;
 }
 
 .icons p {
@@ -86,34 +120,17 @@ footer.icon {
   justify-content: space-between;
 }
 
-
-/* article.tweet {
-  padding: 2rem;
-  border: 0.2rem solid rgba(199, 219, 235, 1);
-  border-radius: 1.5rem;
-  margin-bottom: 30px;
-  margin-left: 15px;
-  margin-right: 15px;
-  background-color: rgba(199, 219, 235, 0.5);
-  transition: 0.3s linear;
-  text-align: center;
-} */
-
-/* article.tweet:hover {
-  box-shadow: 0.5rem 0.5rem 1rem rgb(142, 135, 146);
+.icon i {
+  margin-left: 10px;
 }
 
-article.tweet header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-} */
+.icon i:hover {
+  color: #4056a1;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
 
 
-/* footer {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 2rem;
-  padding: 0 1rem;
-  font-size: 1.8rem;
-} */
+
+
+

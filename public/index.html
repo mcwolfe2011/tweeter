@@ -59,7 +59,7 @@
         <section class="new-tweet">
           <h2 class="compose-tweet">Compose Tweet</h2>
           <form class="tweet-form" method="POST" action="/tweets">
-            <label for="tweet-text">What are you humming about?</label>
+            <label class="tweet-question" for="tweet-text">What are you humming about?</label>
             <textarea name="text" id="tweet-text"></textarea>
             <div class="tweet-button-container">
               <button class="left-side" type="submit">Tweet</button>
@@ -80,7 +80,9 @@
           </p>
           <hr class="one">
           <footer class="icons">
-            <p>10 days ago</p>
+            <div>
+              10 days ago
+            </div>
             <div class="icon">
               <i class="fa-solid fa-flag"></i>
               <i class="fa-sharp fa-solid fa-repeat fa-rotate-90"></i>

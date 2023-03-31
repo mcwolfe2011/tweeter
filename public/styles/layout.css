@@ -4,33 +4,90 @@
  * Do not modify these two selectors, please
  */
  html {
-  box-sizing: border-box; 
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  font-size: 62.5%;
 }
 *, *:before, *:after {
   box-sizing: inherit;
+  margin: 0;
+  padding: 0;
 }
 
 /*
  * Global layout stuff
  */
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
+
+body {
   color: #545149;
-  font-size: 24px;
-  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #f4f1ec;
+  font-family: 'source sans pro', 'sans-serif';
+  overflow-x: hidden;
 }
 
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
- nav {
-  font-family: 'Bungee', cursive;
-  color: #fff;
-  background-color: #4056a1; 
+ main{
+   max-width: 100rem;
+   width: 90%;
+   margin: auto;
  }
 
+a {
+  color: #545149;
+  text-decoration: none;
+}
 
+.button-up {
+  position: fixed;
+  bottom: 5rem;
+  right: 5rem;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(161, 161, 241);
+  transition: 0.5s linear;
+  border: 0.2rem solid rgb(104, 104, 170);
+}
+
+.button-properties {
+  pointer-events: none;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.button-up:hover {
+  background-color: rgb(104, 104, 170);
+}
+
+.button-up i {
+  color: #fff;
+  font-size: 4rem;
+}
+
+.button-up:hover i {
+  animation: 1.5s linear infinite bounceup;
+}
+
+@keyframes bounceup {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-0.3rem);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(0.3rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

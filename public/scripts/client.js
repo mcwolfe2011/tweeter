@@ -1,26 +1,60 @@
-/*
- * Client-side JS logic goes here
- * jQuery is already loaded
- * Reminder: Use (and do all your DOM work in) jQuery's document ready function
- */
+$(document).ready(function() {
 
+  $('.write-tweet').click(() => {
+    $('.new-tweet').toggle("slow", () => {
+      $('.error-msgs').hide();
+    });
+  });
 
-// Creates HTML for the Tweet
-// const $tweet = $(`<article class="tweet">Hello world</article>`);
+  // Form submit
+  $('form').on("submit", onSubmit);
+
+  loadTweets(); // Initially Renders Tweets
+});
+
+const onSubmit = function(event) {
+  event.preventDefault();
+
+  const $form = $(this);
+
+  let text = $form.find('#tweet-text').val();
+  const $counter = $form.find('.counter');
+
+  // Error Messages
+  if (text === "") {
+    return $(".error-msgs").text("Post cannot be empty!").slideDown().show();
+  }
+
+  if ($counter.val() < 0) {
+    return $(".error-msgs").text("Post cannot exceed over 140 character limit!").slideDown().show();
+  }
+
+  // Post /tweets
+  const data = $form.serialize();
+  $.post('/tweets', data)
+    .then(function() {
+      $('#tweet-text').val(''); // Refresh Value
+      $(".error-msgs").hide(); // Hide Error Msgs
+      $($counter).val(140); // Restarts counter
+      loadTweets(); // Instantly Loads Tweet To Page
+    });
+};
+
+// Creates HTML For Tweet Post
 const createTweetElement = function(tweet) {
-  let tweet = `
-  <article class="tweet">
+  let $tweet = `
+    <article class="tweet">
     <header>
       <div class="name-wrapper">
         <img src="${tweet.user.avatars}">
         <span>${tweet.user.name}</span>
       </div>
       <div>
-      <span><a class="user-handle" href="#">${tweeter.user.handle}</a></span>
+        <span><a class="user-handle" href="#">${tweet.user.handle}</a></span>
       </div>
     </header>
     <div class="tweet-post">
-      <p>${encodeURIComponent(tweet.content.text)}</p>
+      <p>${escape(tweet.content.text)}</p>
     </div>
     <footer>
       <span>
@@ -33,44 +67,28 @@ const createTweetElement = function(tweet) {
       </span>
     </footer>
   </article>
-  `
-  return tweet;
-}
+  `;
+  return $tweet;
+};
 
-// Test / driver code (temporary). Eventually will get this from the server.
-const tweetData = {
-  "user": {
-    "name": "Newton",
-    "avatars": "https://i.imgur.com/73hZDYK.png",
-      "handle": "@SirIsaac"
-    },
-  "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-  "created_at": 1461116232227
-}
+// Appends Tweets into #tweet-container
+const renderTweets = function(tweets) {
+  // Refresh Value When Page Reloads
+  $('#tweet-text').val('');
 
-const $tweet = createTweetElement(tweetData);
+  // Clear #tweets-container before appending
+  $('#tweets-container').empty();
 
-// Test / driver code (temporary)
-console.log($tweet); // to see what it looks like
-$('article.container').append($tweet); // to add it to the page so we can make sure it's got all the right elements, classes, etc.
+  for (const obj of tweets) {
 
+    $('#tweets-container').prepend(createTweetElement(obj));
+  }
+};
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const createTweetElement = function(tweet) {
-
-// }
+// Get /tweets
+const loadTweets = function() {
+  $.get('/tweets', { method: 'GET' })
+    .then(function(arr) {
+      renderTweets(arr);
+    });
+};

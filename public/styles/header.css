@@ -1,32 +1,26 @@
 .main-header {
   display: flex;
-  justify-content: center;
-  background-color: #9fa4e0;
-  background-image: url("https://www.transparenttextures.com/patterns/diamond-upholstery.png");
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
-/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+  flex-direction: column;
+  align-items: center;
+  background-color: #f4f1ec;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
 }
 
 .profile {
-  padding-top: 40%;
-  padding-bottom: 5%;
+  text-align: center;
   position: relative;
+  z-index: 3;
+}
+
+.profile img { 
+  width: 15rem;
+  height: auto;
 }
 
 .user-name {
-  text-align: center;
   color: #fff;
+  font-size: 2.4rem;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

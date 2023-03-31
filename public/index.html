@@ -1,101 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <!-- Meta Information -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tweeter - Home Page</title>
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<head>
+  <!-- Meta Information -->
+  <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+  <title>Tweeter - Home Page</title>
 
-    <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/header.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+  <!-- External CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    type="text/css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@1,300;1,600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- App CSS -->
+  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+  <link rel="stylesheet" href="styles/nav.css" type="text/css" />
+  <link rel="stylesheet" href="styles/header.css" type="text/css" />
+  <link rel="stylesheet" href="styles/new-tweet.css" type="text/css" />
+  <link rel="stylesheet" href="styles/bubbles.css" type="text/css" />
+  <link rel="stylesheet" href="styles/divider.css" type="text/css" />
+  <link rel="stylesheet" href="styles/error.css" type="text/css" />
+  <link rel="stylesheet" href="styles/mediaQueries.css" type="text/css" />
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script type="text/javascript" src="scripts/composer-char-counter.js"></script>
+  <script type="text/javascript" src="scripts/scroll.js"></script>
+  <script type="text/javascript" src="scripts/helperFunctions/helpers.js"></script>
+</head>
 
-    <!-- External JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js" integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<body>
+  <!-- Top nav bar (fixed) -->
+  <div class="up" id="top"></div>
+  <header class="main-header">
+    <div class="divider">
+      <nav>
+        <span id="logo">tweeter</span>
+        <span class="write-tweet">
+          Tweet It<br>
+          <i class="fas fa-angle-double-down"></i>
+        </span>
+      </nav>
+      <section class="profile">
+        <div class="user-name">
+          <h2>Miki Mi</h2>
+        </div>
+        <img width="150" height="150" src="/images/profile-hex.png">
+      </section>
+    </div>
 
-    <!-- App JS -->
-    <script type="text/javascript" src="/scripts/client.js"></script> 
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
-
-  </head>
-
-  <body>
-    <!-- Top nav bar (fixed) -->
-      <div class="wrapper">
-      <header class="wrapper-child main-header top">
-        <nav class="main-nav">
-          <div class="nav nav-a"><span>Tweeter</span></div>
-            <div class="nav nav-b">
-              <div class="nav-right">
-                <p class="col-right col-top" id="write-new-tweet"><span class="write">Write</span> a new tweet</p>
-                <p class="col-right col-bottom"><a href="#"><i class="fa-solid fa-angles-down"></i></a></p>
-              </div>
-            </div>
-        </nav>
-        <section class="profile">
-          <div>
-            <img src="/images/profile-hex.png"> 
-          </div>
-          <div>
-            <h2 class="user-name">Miki Mi</h2>
-          </div>
-        </section>
-      </header> 
-      <!-- Page-specific (main) content here -->
-      <main class="new-tweet-main wrapper-child">
-        <section class="new-tweet">
-          <h2 class="compose-tweet">Compose Tweet</h2>
-          <form class="tweet-form" method="POST" action="/tweets">
-            <label class="tweet-question" for="tweet-text">What are you humming about?</label>
-            <textarea name="text" id="tweet-text"></textarea>
-            <div class="tweet-button-container">
-              <button class="left-side" type="submit">Tweet</button>
-              <output id="charCount" class="right-side counter" name="counter"  for="tweet-text">140</output>
-            </div>
-          </form>
-        </section>
-
-
-
-        <article class="container">
-          <header class="cc tweet-header" class="tweet">
-            <img src="https://i.imgur.com/73hZDYK.png" alt="newton's icon">
-            <p class="muted">@SirIsaac</p>
-          </header>
-          <p class="cc tweet-p">
-            If I have seen further it is by standing on the shoulders of giants
-          </p>
-          <hr class="one">
-          <footer class="icons">
-            <div>
-              10 days ago
-            </div>
-            <div class="icon">
-              <i class="fa-solid fa-flag"></i>
-              <i class="fa-sharp fa-solid fa-repeat fa-rotate-90"></i>
-              <i class="fa-solid fa-heart"></i>
-            </div>
-          </footer>
-        </article>
+    <section class="new-tweet">
+      <p class="error-msgs"></p>
+      <h2>I quit!</h2>
+      <form method="POST" action="/tweets/">
+        <div class="wrapper">
+          <textarea name="text" id="tweet-text" placeholder="Dreams are falling apart."></textarea>
+        </div>
+        <div class="button-wrapper">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+  </header>
 
 
+  <!-- Page-specific (main) content here -->
+  <main class="container">
 
+    <section id="tweets-container"></section>
 
-      </main>
-    </div><!-- End of  wrapper div  -->
-  </body>
+  </main>
+  <a href="#top" class="button-up button-properties">
+    <i class="fas fa-angle-double-up"></i>
+  </a>
+  <div class="bubble bubble1"></div>
+  <div class="bubble bubble2"></div>
+  <div class="bubble bubble3"></div>
+  <div class="bubble bubble4"></div>
+</body>
+
 </html>

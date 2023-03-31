@@ -1,40 +1,44 @@
-.main-nav {
-  position: fixed;
-  top: 0;
+nav {
+  color: #fff;
+  padding: 2rem;
   display: flex;
-  height: 20vh;
-  width: 100vw;
-  justify-content: center;
-  align-items: center;
-  padding-left: 1.5em;
-  z-index: 1;
+  justify-content: space-between;
+  position: relative;
+  z-index: 3;
 }
 
-.nav-a {
-  flex-grow: 1;
+#logo {
+  font-family: 'bungee', 'sans-serif';
+  font-size: 2rem;
+  color:rgb(180, 73, 207);
+  text-shadow: 0.2rem 0.2rem rgb(85, 75, 94);
 }
 
-.nav-b {
-  display: flex;
-  justify-content: right;
-  flex-grow: 1;
-  padding-right: 1.5em;
+.write-tweet {
+  text-align: center;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 2rem;
 }
 
-.nav-right {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.write-tweet i {
+  color: rgb(180, 73, 207);
+  font-size: 1.8rem;
 }
 
-.col-top {
-  margin-bottom: 0;
+.write-tweet:hover i{
+  animation: 1.3s linear infinite bouncedown;
 }
 
-.col-bottom a {
-  color: red;
-}
+@keyframes bouncedown {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(0.8rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
 
-#write-new-tweet {
-  font-family: 'Source Sans Pro', sans-serif;
 }
